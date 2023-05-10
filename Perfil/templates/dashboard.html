@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Bienvenido {{ user.nombre }}!</h1>
+<h2>Su correo electrónico es: {{ user.email }}</h2>
+<h2>Su vehículo es: {{ user.vehiculo }}</h2>
+<a href="{% url 'parqueadero' %}"><button class="boton-centralizado">Ir a Parqueadero</button>
+</a>
+{% endblock %}

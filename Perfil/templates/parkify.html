@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>Parkify</h1>
+<h2>Por medio de estos enlaces puedes acceder a la documentacion de GitHub y Azure del proyecto Parkify haciendo click sobre los respectivos logos!</h2>
+  <div class="logos">
+    <a href="https://github.com/PabloBaezS/Parkify_INGSOFT"><img src="{% static 'images/github-logo.png' %}" alt="GitHub Logo" width="300"></a>
+    <a href="https://dev.azure.com/PARKIFY/PARKIFY"><img src="{% static 'images/azure-logo.png' %}" alt="Azure Logo" width="300"></a>
+  </div>
+{% endblock %}

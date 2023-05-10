@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Parkify{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/logo-black.png' %}" alt="Parkify logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'about' %}" {% if request.resolver_match.url_name == 'quienes_somos' %}class="active"{% endif %}>Quiénes somos</a>
+            <a href="{% url 'parkify' %}" {% if request.resolver_match.url_name == 'parkify' %}class="active"{% endif %}>Parkify</a>
+            <a href="{% url 'login_usuario' %}" {% if request.resolver_match.url_name == 'login_usuario' %}class="active"{% endif %}>Iniciar sesión</a>
+            <a href="{% url 'registro_usuario' %}" {% if request.resolver_match.url_name == 'registro_usuario' %}class="active"{% endif %}>Registrarse</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
